@@ -353,10 +353,10 @@ body.light .lead p:first-child {
 
 .grid {
   display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
-  max-width: 86rem;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  max-width: 76rem;
   margin: 0 auto;
-  gap: 1.2rem;
+  gap: 1.25rem;
 }
 
 .card,
@@ -372,6 +372,12 @@ form,
   overflow-wrap: break-word;
 }
 
+.card {
+  display: grid;
+  align-content: start;
+  gap: 1.1rem;
+}
+
 body.light .card,
 body.light blockquote,
 body.light form,
@@ -380,14 +386,18 @@ body.light .actionList {
 }
 
 .card h3 {
-  margin: .4rem 0 1rem;
+  max-width: 18ch;
+  margin: 0;
   color: var(--gold);
   font-family: Georgia, "Times New Roman", serif;
-  font-size: clamp(1.2rem, 2vw, 1.42rem);
-  line-height: 1.12;
+  font-size: clamp(1.45rem, 2.25vw, 2rem);
+  line-height: 1.08;
+  overflow-wrap: normal;
+  hyphens: none;
 }
 
 .card p {
+  margin-top: 0;
   margin-bottom: 0;
 }
 
@@ -504,9 +514,6 @@ footer p {
     width: min(100%, 34rem);
   }
 
-  .grid {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-  }
 }
 
 @media (max-width: 760px) {
