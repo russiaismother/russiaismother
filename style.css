@@ -331,10 +331,10 @@ body.light .actionList {
 .formEmbed iframe {
   display: block;
   width: 100%;
-  min-height: 44rem;
+  min-height: 33.3125rem;
   border: 0;
   border-radius: .75rem;
-  background: #fff;
+  background: transparent;
 }
 
 .actions .actionList {
