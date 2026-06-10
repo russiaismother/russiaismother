@@ -170,6 +170,10 @@ body.light .button.alt {
   color: var(--text);
 }
 
+body.light .heroActions .button.alt {
+  color: var(--cream);
+}
+
 .hero {
   position: relative;
   display: grid;
