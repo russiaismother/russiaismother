@@ -49,8 +49,7 @@ body.light {
 }
 
 a,
-button,
-textarea {
+button {
   font: inherit;
 }
 
@@ -276,7 +275,7 @@ body.light .lead p:first-child {
 
 .card,
 blockquote,
-form,
+.formEmbed,
 .actionList {
   min-width: 0;
   border: 1px solid rgba(210, 173, 99, .34);
@@ -295,7 +294,7 @@ form,
 
 body.light .card,
 body.light blockquote,
-body.light form,
+body.light .formEmbed,
 body.light .actionList {
   background: rgba(255, 248, 234, .78);
 }
@@ -320,27 +319,22 @@ body.light .actionList {
   background: linear-gradient(90deg, rgba(159, 29, 44, .2), rgba(11, 75, 117, .16));
 }
 
-form {
-  display: grid;
-  max-width: 50rem;
+.formEmbed {
+  max-width: 54rem;
   margin: auto;
-  gap: 1rem;
+  padding: .8rem;
+  background:
+    linear-gradient(180deg, rgba(248, 239, 217, .12), rgba(248, 239, 217, .04)),
+    rgba(13, 19, 34, .55);
 }
 
-textarea {
+.formEmbed iframe {
+  display: block;
   width: 100%;
-  min-height: 12rem;
-  resize: vertical;
-  border: 1px solid rgba(210, 173, 99, .5);
-  border-radius: .9rem;
-  padding: 1rem;
-  background: rgba(255, 255, 255, .08);
-  color: var(--text);
-}
-
-body.light textarea {
+  min-height: 44rem;
+  border: 0;
+  border-radius: .75rem;
   background: #fff;
-  color: var(--text);
 }
 
 .actions .actionList {
@@ -509,7 +503,7 @@ footer p {
 
   .card,
   blockquote,
-  form,
+  .formEmbed,
   .actionList {
     padding: 1rem;
   }
