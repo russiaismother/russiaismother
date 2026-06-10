@@ -174,42 +174,22 @@ body.light .button.alt {
 .hero {
   position: relative;
   display: grid;
-  grid-template-columns: minmax(0, 1.15fr) minmax(18rem, 25rem);
-  align-items: center;
-  gap: clamp(2rem, 5vw, 4rem);
-  min-height: 92vh;
-  padding: clamp(4rem, 8vw, 7rem) clamp(1rem, 6vw, 5rem) 5rem;
+  gap: 1rem;
+  padding: clamp(1rem, 2.6vw, 2.25rem) clamp(1rem, 4vw, 3rem) clamp(2.25rem, 4vw, 3.5rem);
+  background: #070d1a;
+  overflow: clip;
+}
+
+.visuallyHidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  padding: 0;
   overflow: hidden;
-}
-
-.hero::before {
-  content: "";
-  position: absolute;
-  inset: 0;
-  background: url(image-2.webp) center / cover;
-  opacity: .12;
-  mix-blend-mode: screen;
-}
-
-.hero::after {
-  content: "";
-  position: absolute;
-  right: -10%;
-  bottom: 0;
-  left: -10%;
-  height: 28%;
-  background: linear-gradient(0deg, var(--bg), transparent);
-}
-
-.heroText,
-.portraitBox {
-  position: relative;
-  z-index: 1;
-}
-
-.heroText {
-  min-width: 0;
-  max-width: 60rem;
+  border: 0;
+  clip: rect(0 0 0 0);
+  white-space: nowrap;
 }
 
 .kicker,
@@ -221,94 +201,29 @@ body.light .button.alt {
   font-weight: 900;
 }
 
-.hero h1 {
-  max-width: 17ch;
-  margin: .7rem 0;
-  color: var(--cream);
-  font-family: Georgia, "Times New Roman", serif;
-  font-size: clamp(3rem, 5.2vw, 5.6rem);
-  line-height: .92;
-  text-shadow: 0 .8rem 2.5rem rgba(0, 0, 0, .55);
+.heroPoster {
+  display: block;
+  width: min(100%, 100rem);
+  margin: 0 auto;
+  border: 1px solid rgba(210, 173, 99, .45);
+  border-radius: 1rem;
+  background: #101827;
+  box-shadow: 0 1.4rem 3rem var(--shadow);
+  overflow: hidden;
 }
 
-.heroLine {
-  white-space: nowrap;
-}
-
-body.light .hero h1 {
-  color: #681622;
-  text-shadow: none;
-}
-
-.subtitle {
-  max-width: 32rem;
-  color: var(--text);
-  font-family: Georgia, "Times New Roman", serif;
-  font-size: clamp(1.15rem, 1.7vw, 1.8rem);
-  line-height: 1.25;
+.heroPoster img {
+  width: 100%;
+  height: auto;
+  object-fit: contain;
 }
 
 .heroActions {
   display: flex;
   flex-wrap: wrap;
+  justify-content: center;
   gap: .8rem;
-  margin-top: 2rem;
-}
-
-.portraitBox {
-  width: min(100%, 25rem);
-  min-height: 34rem;
-  margin-inline: auto;
-  border: 1px solid rgba(210, 173, 99, .6);
-  border-radius: 1.5rem;
-  background: linear-gradient(160deg, rgba(210, 173, 99, .22), rgba(159, 29, 44, .25), rgba(11, 75, 117, .18));
-  box-shadow: 0 2rem 5rem var(--shadow);
-  overflow: hidden;
-}
-
-.portraitBox img {
-  position: absolute;
-  inset: 0;
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  filter: contrast(1.04) saturate(.92);
-}
-
-.portraitBox::after {
-  content: "";
-  position: absolute;
-  inset: 0;
-  background:
-    linear-gradient(0deg, rgba(16, 13, 20, .62), transparent 50%),
-    radial-gradient(circle at 50% 6%, rgba(248, 239, 217, .5), transparent 11rem);
-}
-
-.halo {
-  position: absolute;
-  top: 1rem;
-  left: 50%;
-  z-index: 2;
-  display: grid;
-  place-items: center;
-  width: 8rem;
-  height: 8rem;
-  border: 1px solid var(--gold);
-  border-radius: 50%;
-  color: var(--gold);
-  background: rgba(248, 239, 217, .1);
-  font-size: 3rem;
-  transform: translateX(-50%);
-}
-
-.flag {
-  position: absolute;
-  right: 0;
-  bottom: 0;
-  left: 0;
-  z-index: 2;
-  height: 1rem;
-  background: linear-gradient(90deg, #fff 0 33%, #1f5fa8 33% 66%, #c9303f 66%);
+  margin-top: .25rem;
 }
 
 .section {
@@ -498,20 +413,7 @@ footer p {
   }
 
   .hero {
-    grid-template-columns: 1fr;
-    min-height: auto;
-  }
-
-  .hero h1 {
-    max-width: none;
-  }
-
-  .subtitle {
-    max-width: 42rem;
-  }
-
-  .portraitBox {
-    width: min(100%, 34rem);
+    padding-inline: 1rem;
   }
 
 }
@@ -551,11 +453,7 @@ footer p {
   }
 
   .hero {
-    padding: 3rem 1rem;
-  }
-
-  .hero h1 {
-    font-size: clamp(2.55rem, 14vw, 3.4rem);
+    padding: 1rem 1rem 2.5rem;
   }
 
   .kicker,
@@ -571,16 +469,8 @@ footer p {
     width: 100%;
   }
 
-  .portraitBox {
-    min-height: auto;
-    aspect-ratio: 4 / 5;
-    border-radius: 1rem;
-  }
-
-  .halo {
-    width: 6rem;
-    height: 6rem;
-    font-size: 2.4rem;
+  .heroPoster {
+    border-radius: .75rem;
   }
 
   .sectionTitle {
@@ -615,14 +505,6 @@ footer p {
 
   nav {
     grid-template-columns: 1fr;
-  }
-
-  .hero h1 {
-    font-size: clamp(2.25rem, 13vw, 2.8rem);
-  }
-
-  .subtitle {
-    font-size: 1.08rem;
   }
 
   .card,
