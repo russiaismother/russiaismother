@@ -131,7 +131,6 @@ nav a:focus-visible {
   color: var(--gold);
 }
 
-.toggle,
 .button {
   display: inline-flex;
   align-items: center;
@@ -154,11 +153,36 @@ nav a:focus-visible {
 }
 
 .toggle {
-  min-width: 9.5rem;
-  background: transparent;
-  color: var(--gold);
+  position: relative;
+  display: inline-flex;
+  flex: 0 0 auto;
+  width: 3.7rem;
+  height: 2rem;
+  border: 1px solid rgba(210, 173, 99, .72);
+  border-radius: 999px;
+  padding: .2rem;
+  background: rgba(248, 239, 217, .08);
   box-shadow: none;
-  white-space: nowrap;
+  cursor: pointer;
+}
+
+.toggle::before {
+  content: "";
+  width: 1.45rem;
+  height: 1.45rem;
+  border-radius: 50%;
+  background: var(--red2);
+  box-shadow: 0 0 .8rem rgba(201, 48, 63, .35);
+  transition: transform .2s ease, background .2s ease;
+}
+
+body.light .toggle {
+  background: rgba(27, 36, 51, .08);
+}
+
+body.light .toggle::before {
+  background: var(--gold);
+  transform: translateX(1.65rem);
 }
 
 .button.alt {
@@ -419,35 +443,35 @@ footer p {
 @media (max-width: 760px) {
   .top {
     position: relative;
-    grid-template-columns: 1fr;
-    align-items: stretch;
-    padding: 1rem;
+    grid-template-columns: minmax(0, 1fr) auto;
+    align-items: center;
+    gap: .75rem;
+    padding: .8rem 1rem;
   }
 
   .brand {
-    justify-content: center;
+    justify-self: start;
   }
 
   nav {
     display: grid;
+    grid-column: 1 / -1;
     grid-template-columns: repeat(2, minmax(0, 1fr));
-    gap: .5rem;
+    gap: .45rem;
   }
 
   nav a {
     display: flex;
     align-items: center;
     justify-content: center;
-    min-height: 2.5rem;
+    min-height: 2.25rem;
     border: 1px solid rgba(210, 173, 99, .25);
-    border-radius: .65rem;
-    padding: .45rem .55rem;
+    border-radius: .55rem;
+    padding: .35rem .45rem;
     background: rgba(248, 239, 217, .05);
+    font-size: .72rem;
+    letter-spacing: .035em;
     text-align: center;
-  }
-
-  .toggle {
-    width: 100%;
   }
 
   .hero {
@@ -498,11 +522,15 @@ footer p {
   }
 
   .brand span:last-child {
-    font-size: .9rem;
+    font-size: .86rem;
   }
 
   nav {
-    grid-template-columns: 1fr;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  nav a {
+    font-size: .68rem;
   }
 
   .card,
