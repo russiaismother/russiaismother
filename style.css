@@ -246,11 +246,18 @@ body.light .heroActions .button.alt {
 }
 
 .heroActions {
-  display: flex;
-  flex-wrap: wrap;
+  display: grid;
+  grid-template-columns: repeat(3, minmax(12rem, 1fr));
   justify-content: center;
+  width: min(100%, 56rem);
+  margin: .25rem auto 0;
   gap: .8rem;
-  margin-top: .25rem;
+}
+
+.heroActions .button {
+  min-height: 3rem;
+  padding-inline: .9rem;
+  box-shadow: 0 .7rem 1.4rem rgba(0, 0, 0, .28);
 }
 
 .section {
@@ -501,7 +508,15 @@ footer p {
   }
 
   .heroActions {
-    display: grid;
+    grid-template-columns: 1fr;
+    width: min(100%, 24rem);
+    gap: .55rem;
+  }
+
+  .heroActions .button {
+    min-height: 2.65rem;
+    padding: .62rem .8rem;
+    font-size: .88rem;
   }
 
   .button {
@@ -553,6 +568,12 @@ footer p {
 
   nav a {
     font-size: .68rem;
+  }
+
+  .heroActions .button {
+    min-height: 2.55rem;
+    padding: .56rem .7rem;
+    font-size: .8rem;
   }
 
   .card,
