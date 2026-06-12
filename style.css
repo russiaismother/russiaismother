@@ -365,6 +365,23 @@ body.light .actionList {
   background: transparent;
 }
 
+.formFallback {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  padding: 1rem .2rem .2rem;
+}
+
+.formFallback p {
+  margin: 0;
+  color: var(--muted);
+}
+
+.formFallback .button {
+  box-shadow: none;
+}
+
 .actions .actionList {
   display: flex;
   flex-direction: column;
@@ -489,6 +506,11 @@ footer p {
 
   .button {
     width: 100%;
+  }
+
+  .formFallback {
+    align-items: stretch;
+    flex-direction: column;
   }
 
   .heroPoster {
