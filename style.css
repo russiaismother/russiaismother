@@ -509,14 +509,14 @@ footer p {
 
   .heroActions {
     grid-template-columns: 1fr;
-    width: min(100%, 24rem);
+    width: min(100%, 26rem);
     gap: .55rem;
   }
 
   .heroActions .button {
     min-height: 2.65rem;
     padding: .62rem .8rem;
-    font-size: .88rem;
+    font-size: .82rem;
   }
 
   .button {
